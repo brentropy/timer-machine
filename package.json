@@ -1,0 +1,25 @@
+{
+  "name": "timer-machine",
+  "version": "0.0.1",
+  "description": "A lightweight, pause-able timer class",
+  "main": "lib/timer.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brentburgoyne/timer-machine.git"
+  },
+  "keywords": [
+    "timer",
+    "time",
+    "pause",
+    "stopwatch"
+  ],
+  "author": "Brent Burgoyne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brentburgoyne/timer-machine/issues"
+  },
+  "homepage": "https://github.com/brentburgoyne/timer-machine"
+}
