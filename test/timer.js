@@ -1,6 +1,8 @@
 var should = require('should')
 var Timer  = require('../lib/timer')
-var getTime = require('./mocks/date-get-time')
+
+var getTimeMock = require('./mocks/date-get-time')
+var timerTimeMock = require('./mocks/timer-time')
 
 describe('A Timer object', function () {
 
@@ -10,11 +12,11 @@ describe('A Timer object', function () {
 
   beforeEach(function () {
     timer = new Timer()
-    getTime.expect(start)
+    getTimeMock.expect(start)
   })
 
   afterEach(function () {
-    getTime.revert()
+    getTimeMock.revert()
   })
 
   describe('constructor', function () {
@@ -42,15 +44,26 @@ describe('A Timer object', function () {
 
     it('should return the time since start if only started once', function () {
       timer.start()
-      getTime.expect(end)
+      getTimeMock.expect(end)
       timer.time().should.equal(end - start)
     })
 
     it ('should include the total of past start/stops', function () {
       timer._total = 47
       timer.start()
-      getTime.expect(end)
+      getTimeMock.expect(end)
       timer.time().should.equal(end - start + timer._total)
+    })
+
+  })
+
+  describe('emitTime prototype method', function () {
+
+    it('should return the result of timer.time', function () {
+      var expected = {}
+      timerTimeMock.expect(expected)
+      timer.emitTime().should.equal(expected)
+      timerTimeMock.revert()
     })
 
   })
@@ -60,21 +73,21 @@ describe('A Timer object', function () {
     it('should return 0 if the timer is stopped', function () {
       timer.timeFromStart().should.equal(0)
       timer.start()
-      getTime.expect(end)
+      getTimeMock.expect(end)
       timer.stop()
       timer.timeFromStart().should.equal(0)
     })
 
     it('should return the time since start', function () {
       timer.start()
-      getTime.expect(end)
+      getTimeMock.expect(end)
       timer.timeFromStart().should.equal(end - start)
     })
 
     it ('should not include the total of past start/stops', function () {
       timer._total = 47
       timer.start()
-      getTime.expect(end)
+      getTimeMock.expect(end)
       timer.timeFromStart().should.equal(end - start)
     })
 
