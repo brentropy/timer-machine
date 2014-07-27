@@ -1,6 +1,6 @@
 {
   "name": "timer-machine",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A lightweight, pause-able timer class",
   "main": "lib/timer.js",
   "scripts": {
