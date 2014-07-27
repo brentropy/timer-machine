@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+env:
+- secure: KzQMtgZFclo1yWHKZFuJyqcYyNET+7iU1gT7EZRSo+5yZUzL4XbxeQfLUIkviXE3WCyW3NdzLCjv7RYuUAsFDYuT7ALj/yEXHFZNir81ZgAQ7V4ia8d/RCBOlPgeGQ3bw3ZTI20y5a7NsM3HYonTt8QdaqesJ+TWobG3MyfrCsg=
+before_script: npm install -g istanbul codeclimate-test-reporter
+script: istanbul cover node_modules/.bin/_mocha -- -u exports -R spec
+after_success: codeclimate < coverage/lcov.info
+deploy:
+  provider: npm
+  api_key:
+    secure: ZQJgJLecuXTGQEact0O9qWbevYb3Acsw6MHzQbVh0A8POqMHtk7NWzcAhvjgD+4ssJDWgtvOmJ6z6pOd50BXkGXZIew5KRzeQ+BslEnt0T8fSk1Xht3okdZKiZV7/iJaK7S/L1Bx3oEkursV5oO6gWLvH5iZqN0jruc7Smm/e+A=
+  on:
+    tags: true
+  email:
+    secure: EwXgUq7O6XwrLShnwtNNsrx05LD1IlHlFAxJ/kYXerMg0IwArt74uDYH7BQeJsYzkKMon0sjLvibZPb0g165D9kZ/xku0wufyNxUx39WQ4Y6FZslBDJGRVQE5qlZzI6pmQH2vwO1IJVkImGbBkg9SmCts8rrMy1bnPUHc8lEqE0=
