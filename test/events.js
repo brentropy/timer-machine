@@ -1,3 +1,5 @@
+/*jshint expr: true*/
+
 var should       = require('should')
 var Timer        = require('../lib/timer')
 var EventEmitter = require('events').EventEmitter

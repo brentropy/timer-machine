@@ -1,3 +1,5 @@
+/*jshint freeze: false*/
+
 var originalGetTime = Date.prototype.getTime
 
 exports.expect = function (time) {

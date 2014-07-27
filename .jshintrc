@@ -20,5 +20,13 @@
   "boss": true,
   "eqnull": true,
   "browser": true,
-  "node": true
+  "node": true,
+  "globals": {
+    "describe": true,
+    "before": true,
+    "beforeEach": true,
+    "after": true,
+    "afterEach": true,
+    "it": true
+  }
 }
