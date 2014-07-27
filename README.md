@@ -1,5 +1,11 @@
 # Timer Machine
 
+[![npm](http://img.shields.io/npm/v/timer-machine.svg?style=flat)](https://www.npmjs.org/package/timer-machine)
+[![Travis](http://img.shields.io/travis/brentburgoyne/timer-machine.svg?style=flat)](https://travis-ci.org/brentburgoyne/timer-machine)
+[![Code Climate](http://img.shields.io/codeclimate/github/brentburgoyne/timer-machine.svg?style=flat)](https://codeclimate.com/github/brentburgoyne/timer-machine)
+[![Code Climate Coverage](http://img.shields.io/codeclimate/coverage/github/brentburgoyne/timer-machine.svg?style=flat)](https://codeclimate.com/github/brentburgoyne/timer-machine)
+[![Gemnasium](http://img.shields.io/gemnasium/brentburgoyne/timer-machine.svg?style=flat)](https://gemnasium.com/brentburgoyne/timer-machine)
+
 A simple, flexible timer for JavaScript.
 
 ## Installation
