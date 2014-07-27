@@ -1,7 +1,8 @@
 var should = require('should')
+var sinon  = require('sinon')
 var Timer  = require('../lib/timer')
 
-var getTimeMock = require('./mocks/date-get-time')
+var getTimeMock   = require('./mocks/date-get-time')
 var timerTimeMock = require('./mocks/timer-time')
 
 describe('A Timer object', function () {
@@ -183,6 +184,29 @@ describe('A Timer object', function () {
     it('should always return true', function () {
       timer.toggle().should.be.true
       timer.toggle().should.be.true
+    })
+
+  })
+
+  describe('toString prototype method', function () {
+
+    it('should return a string', function () {
+      timer.toString().should.be.a.String
+    })
+
+    it('should be a whole number followed by"ms"', function () {
+      timer.toString().should.match(/\d+ms/)
+    })
+
+  })
+
+  describe('valueOf prototype method', function () {
+
+    it('should be an alias of time()', function () {
+      var expected = {}
+      sinon.stub(timer, 'time').returns(expected)
+      timer.valueOf().should.equal(expected)
+      timer.time.restore()
     })
 
   })
