@@ -160,10 +160,43 @@ describe('A Timer object', function () {
       timer.stop().should.be.false
     })
 
-    it('should set timer._start to the null', function () {
+    it('should set timer._start to null', function () {
       timer.start()
       timer.stop()
       should(timer._start).equal(null)
+    })
+
+  })
+
+  describe('stopParallel prototype method', function () {
+
+    it('should return true if called equal to start', function () {
+      timer.start()
+      timer.start()
+      timer.stopParallel()
+      debugger
+      timer.stopParallel().should.be.true
+    })
+
+    it('should return false if called less than start', function () {
+      timer.start()
+      timer.start()
+      timer.stopParallel().should.be.false
+    })
+
+    it('should set timer._start to null if called equal to start', function () {
+      timer.start()
+      timer.start()
+      timer.stopParallel()
+      timer.stopParallel()
+      should(timer._start).equal(null)
+    })
+
+    it('should not set timer._start to null if called less', function () {
+      timer.start()
+      timer.start()
+      timer.stopParallel()
+      should(timer._start).not.equal(null)
     })
 
   })

@@ -4,7 +4,8 @@
   "description": "A lightweight, pause-able timer class",
   "main": "lib/timer.js",
   "scripts": {
-    "test": "jshint lib test && mocha"
+    "test": "jshint lib && mocha",
+    "debug-test": "mocha debug"
   },
   "repository": {
     "type": "git",
