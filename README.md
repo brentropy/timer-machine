@@ -96,7 +96,7 @@ The `toggle()` method will call `start()` if the `Timer` is stopped or `stop()`
 if the timer is started.
 
 ```js
-var timer = new Tiemr()
+var timer = new Timer()
 timer.isStarted() // -> false
 timer.toggle()
 timer.isStarted() // -> true
